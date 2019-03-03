@@ -1,0 +1,12 @@
+#include<stdio.h>    
+main() { 
+int a=9.0;
+float c=3.90;
+char b='b';
+c=a+b;
+a <= b;
+printf("%d",c);	//Hello
+/*
+Hello
+*/ 
+}
