@@ -8,6 +8,7 @@
 %token INTEGER
 %token FLOATING
 %token CHARACTER
+%token DOUBLE
 %left '+' '-'
 %left '*' '/' '^'
 %left '&' '|'
@@ -17,6 +18,7 @@ program:
 	program iexpr '\n' {printf("Integer\n");}
 	| program fexpr '\n' {printf("Float\n");}
 	| program cexpr '\n' {printf("Character\n");}
+	| program dexpr '\n' {printf("Double\n");}
 	|
 	;
 op:
@@ -36,6 +38,15 @@ fexpr:
 	| fexpr op iexpr
 	| fexpr op fexpr
 	| '(' fexpr ')'
+	;
+dexpr:
+	DOUBLE
+	| dexpr op dexpr
+	| iexpr op dexpr
+	| dexpr op iexpr
+	| dexpr op fexpr
+	| fexpr op dexpr
+	| '(' dexpr ')'
 	;
 cexpr:
 	CHARACTER
