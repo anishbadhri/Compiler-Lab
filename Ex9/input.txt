@@ -1,0 +1,16 @@
+int add(int,int);
+int sub(int,int);
+
+int add(int a,int b){
+  return sub(a, b);
+}
+int sub(float a,float b){
+  return a - b;
+}
+int main() { 
+	int a = 10, b = 45, sum;
+	float x = 10.9, y = 45.2, difference;
+  difference = sub(x, y);
+	sum = add(a, b);
+	return 0;
+}
